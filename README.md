@@ -28,7 +28,7 @@ Any input modification changes *Copy* button back to *Shorten* and removes all e
 
 Original URL is validated for syntax, but it's not verified for existing endpoint.
 
-Shortened URL is short (lets assume 5 characters), unique and readable (only letters). URL query parameters are considered in uniqueness test.
+Shortened URL is short (lets assume 5 characters), unique and readable (only lowercase letters). URL query parameters are considered in uniqueness test.
 
 Passing already shortened URL results with an error.
 
@@ -83,3 +83,9 @@ Every value has 14 day expire time.
 Each access resets expiration time back to 14 days.
 
 Expired entries should be removed permanently.
+
+Considering 5 length key of lowercase chars, we have P(26,5) = 7893600 distinct keys,
+that gives us (according to https://zelark.github.io/nano-id-cc/ )
+around 8 minutes to hit 1% chance of duplicate, with 1/s generated keys.
+For this example, it should be enough, but some not-perfect way of handling
+duplicates would be to generate n+1 length key for each n length key that is duplicated.

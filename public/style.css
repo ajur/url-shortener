@@ -24,6 +24,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+a, a:link, a:visited {
+  color: var(--text-color);
 }
 
 form {
@@ -36,6 +41,7 @@ input {
   margin: 0.5em;
   border: 0;
   border-radius: 0.2em;
+  outline: none;
 }
 
 input[type="text"] {
@@ -52,4 +58,19 @@ input[type="submit"] {
   padding: 0.5em 1em;
   margin-left: 0.1em;
   box-shadow: inset 0px -2px var(--text-color);
+  cursor: pointer;
+}
+input[type="submit"]:active {
+  box-shadow: none;
+}
+
+#errors {
+  position: absolute;
+  margin: 4em 0 0;
+  list-style: none;
+  color: var(--err-color);
+}
+#errors li {
+  margin: 0;
+  padding: 0;
 }
