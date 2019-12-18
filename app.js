@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.post('/', (req, res) => {
+app.post('/', async (req, res) => {
   console.debug(`got post with url to shorten: "${req.body.url}"`);
 
   try {
@@ -32,7 +32,7 @@ app.post('/', (req, res) => {
       throw Error("This URL is already shortened.");
     }
 
-    const shortId = shortener.generateId(url);
+    const shortId = await shortener.shorten(url);
 
     res.send({
       url: url,

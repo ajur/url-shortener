@@ -27,6 +27,7 @@ formElement.addEventListener('submit', function (evt) {
         throw data.error;
       }
       urlInput.value = data.short;
+      urlInput.select();
     })
     .catch(err => {
       console.log('got error', err)

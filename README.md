@@ -84,7 +84,7 @@ Each access resets expiration time back to 14 days.
 
 Expired entries should be removed permanently.
 
-Considering 5 length key of lowercase chars, we have P(26,5) = 7893600 distinct keys,
+Considering 5 length key of lowercase chars, we get almost 12 million distinct keys,
 that gives us (according to https://zelark.github.io/nano-id-cc/ )
 around 8 minutes to hit 1% chance of duplicate, with 1/s generated keys.
 For this example, it should be enough, but some not-perfect way of handling
