@@ -28,13 +28,11 @@ Any input modification changes *Copy* button back to *Shorten* and removes all e
 
 Original URL is validated for syntax, but it's not verified for existing endpoint.
 
-Shortened URL is short (lets assume 5 characters), unique and readable. URL query parameters are considered in uniqueness test.
+Shortened URL is short (lets assume 5 characters), unique and readable (only letters). URL query parameters are considered in uniqueness test.
 
 Passing already shortened URL results with an error.
 
-Q: Should shortening same URL twice (within 14 days) return same shortened URL?
-
-Q: Could you specify "readable"? Is it "random set of only letters and numbers" or maybe rather "random words", possibly also with numbers?
+Shortening URL that is already shortened, and not yet expired, should return same result.
 
 ### redirecting
 
@@ -49,11 +47,9 @@ Request to non existing URL return *page not found* error.
 ### SPA
 
 - Single static HTML page
-- Vanilla JS
+- Vanilla JS, targeting only modern browsers (no need for babel)
 - Minimalistic CSS
 - JS and CSS inlined?
-
-Q: Can I assume targeting modern browsers and not include babel?
 
 ### server
 
