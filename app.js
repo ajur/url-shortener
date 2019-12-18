@@ -32,10 +32,10 @@ app.post('/', async (req, res) => {
       throw Error("This URL is already shortened.");
     }
 
-    const shortId = await shortener.shorten(url);
+    const shortId = await shortener.shorten(url.href);
 
     res.send({
-      url: url,
+      url: url.href,
       short: normalizeUrl(req.get('host') + '/' + shortId),
       id: shortId
     });
@@ -45,9 +45,15 @@ app.post('/', async (req, res) => {
 });
 
 
-app.get('/:shortId(\\w+)', (req, res) => {
+app.get('/:shortId(\\w+)', async (req, res) => {
   console.log('access shortened url with id ', req.params.shortId);
-  res.status(404).sendFile('404.html', { root: staticsPath });
+  const url = await shortener.getUrl(req.params.shortId);
+  if (url) {
+    console.info(`found ${req.params.shortId}, redirecting to ${url}`);
+    res.redirect(301, url)
+  } else {
+    res.status(404).sendFile('404.html', { root: staticsPath });
+  }
 });
 
 
