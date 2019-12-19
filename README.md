@@ -54,9 +54,10 @@ Request to non existing URL return *page not found* error.
 ### SPA
 
 - Single static HTML page
-- Vanilla JS, targeting only modern browsers (no need for babel)
+- Vanilla JS, targeting only modern browsers (to avoid babel)
+- No front-end framework, to be ok with KISS and YAGNI principles
 - Minimalistic CSS
-- JS and CSS inlined?
+- JS and CSS inlined? - No, but could be good idea, as well as minification
 
 ### server
 
