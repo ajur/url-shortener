@@ -7,7 +7,7 @@ const redis = new Redis(process.env.REDIS_URL);
 
 const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
 const DEFAULT_KEY_LENGTH = 5;
-const EXPIRATION = 2 * 60;//14 * 24 * 60 * 60;  // 14 days
+const EXPIRATION = 14 * 24 * 60 * 60;  // 14 days
 
 const idToKey = (id) => 'short:' + id;
 const urlToKey = (url) => 'url:' + url;
