@@ -10,6 +10,13 @@ Constraints:
 - Handle error cases
 
 
+## live app
+
+Running application should be available on http://shuri.ajur.pl/
+
+Please note it's running on free heroku plan, so performance and actual db size is heavily limited.
+Direct url to heroku in case of dns issues with custom domain: https://ajur-url-shortener.herokuapp.com/
+
 ## spec
 
 ### web page
