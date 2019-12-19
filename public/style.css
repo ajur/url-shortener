@@ -4,6 +4,7 @@
   --bg-shadow-color: #71c3c6;
   --input-color: #F1FAEE;
   --button-color: #457B9D;
+  --button-active-color: #6197b9;
   --text-color: #1D3557;
   --err-color: #E63946;
 
@@ -34,6 +35,7 @@ a, a:link, a:visited {
 form {
   display: flex;
   width: 90%;
+  position: relative;
 }
 
 input {
@@ -52,7 +54,8 @@ input[type="text"] {
   background: var(--input-color);
 }
 
-input[type="submit"] {
+input[type="submit"],
+input[type="button"] {
   background: var(--button-color);
   color: var(--input-color);
   padding: 0.5em 1em;
@@ -60,17 +63,37 @@ input[type="submit"] {
   box-shadow: inset 0px -2px var(--text-color);
   cursor: pointer;
 }
-input[type="submit"]:active {
+
+input[type="button"]:active,
+input[type="button"]:disabled,
+input[type="submit"]:active,
+input[type="submit"]:disabled {
+  background: var(--button-active-color);
   box-shadow: none;
 }
 
-#errors {
+#info {
   position: absolute;
-  margin: 4em 0 0;
-  list-style: none;
+  top: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error {
   color: var(--err-color);
 }
-#errors li {
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+p {
   margin: 0;
-  padding: 0;
+  font-size: 1.5em;
 }
