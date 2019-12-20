@@ -36,11 +36,13 @@ form {
   display: flex;
   width: 90%;
   position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 input {
   font-size: 1.6em;
-  margin: 0.5em;
+  margin: 0.5em 0;
   border: 0;
   border-radius: 0.2em;
   outline: none;
@@ -61,7 +63,7 @@ input[type="button"] {
   background: var(--button-color);
   color: var(--input-color);
   padding: 0.5em 1em;
-  margin-left: 0.1em;
+  margin-left: 0.5em;
   box-shadow: inset 0px -2px var(--text-color);
   cursor: pointer;
 }
@@ -98,4 +100,17 @@ h1 {
 p {
   margin: 0;
   font-size: 1.5em;
+}
+
+@media only screen and (max-width: 480px) {
+  form {
+    flex-direction: column;
+  }
+  input[type="text"] {
+    width: 100%;
+  }
+  input[type="submit"],
+  input[type="button"] {
+    margin-left: 0;
+  }
 }
