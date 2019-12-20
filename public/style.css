@@ -47,6 +47,7 @@ input {
 }
 
 input[type="text"] {
+  -webkit-appearance: none;
   margin-right: 0.1em;
   padding: 0.5em;
   box-shadow: inset 0px 2px var(--bg-shadow-color);
@@ -56,6 +57,7 @@ input[type="text"] {
 
 input[type="submit"],
 input[type="button"] {
+  -webkit-appearance: none;
   background: var(--button-color);
   color: var(--input-color);
   padding: 0.5em 1em;
